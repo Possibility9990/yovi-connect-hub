@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, BadgeCheck, Lock, Check, Star } from "lucide-react";
+import { BadgeCheck, Lock, Check, Star } from "lucide-react";
 import { TrustCard } from "./TrustCard";
 
 export function Hero() {
