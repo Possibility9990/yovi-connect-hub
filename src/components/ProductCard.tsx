@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, Star } from "lucide-react";
 import type { Product } from "@/types/yovi";
 
 const formatter = new Intl.NumberFormat("en-NG");
@@ -31,10 +31,15 @@ export function ProductCard({ product }: { product: Product }) {
         </motion.button>
       </div>
       <div className="p-4">
-        <h3 className="truncate text-sm font-medium text-yovi-text">{product.name}</h3>
+        <h3 className="truncate text-sm font-semibold text-yovi-text">{product.name}</h3>
         <p className="mt-1 text-base font-bold text-yovi-primary">
           ₦{formatter.format(product.price)}
         </p>
+        <div className="mt-1.5 flex items-center gap-1 text-xs">
+          <Star className="h-3.5 w-3.5 fill-yovi-orange text-yovi-orange" />
+          <span className="font-medium text-yovi-text">{product.rating}</span>
+          <span className="text-yovi-muted">({product.reviews})</span>
+        </div>
       </div>
     </motion.article>
   );

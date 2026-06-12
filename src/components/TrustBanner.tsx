@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 
+const paymentLogos = ["Visa", "Mastercard", "Verve", "Flutterwave", "PCI DSS"];
+
 export function TrustBanner() {
   return (
     <motion.section
@@ -10,28 +12,29 @@ export function TrustBanner() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="mx-auto max-w-[1440px] px-4 pb-16 md:px-8"
     >
-      <div className="grid grid-cols-1 items-center gap-8 rounded-[28px] bg-gradient-to-br from-yovi-primary to-yovi-secondary p-8 text-white shadow-xl md:grid-cols-[1fr_auto] md:p-12">
-        <div className="flex items-start gap-5">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15 backdrop-blur">
-            <ShieldCheck className="h-7 w-7" />
+      <div className="grid grid-cols-1 items-center gap-6 rounded-[20px] border border-yovi-border bg-white p-5 shadow-sm md:grid-cols-[1fr_auto] md:gap-8 md:p-6">
+        <div className="flex items-center gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-yovi-primary/10 text-yovi-primary">
+            <ShieldCheck className="h-6 w-6" />
           </div>
-          <div>
-            <h2 className="text-2xl font-extrabold leading-tight sm:text-3xl">
-              Your Trust Is Our Priority
+          <div className="min-w-0">
+            <h2 className="text-base font-bold text-yovi-text sm:text-lg">
+              Your Trust is Our Priority
             </h2>
-            <p className="mt-3 max-w-xl text-sm text-white/85 sm:text-base">
-              Every transaction is protected with escrow, payment secure and only release funds when
-              you&apos;re satisfied.
+            <p className="mt-1 text-xs text-yovi-muted sm:text-sm">
+              Every transaction is protected with escrow. Pay securely and only release funds when you&apos;re satisfied.
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex h-12 w-20 items-center justify-center rounded-lg bg-white text-xs font-semibold text-yovi-text">
-            Visa
-          </div>
-          <div className="flex h-12 w-20 items-center justify-center rounded-lg bg-white text-xs font-semibold text-yovi-text">
-            Mastercard
-          </div>
+        <div className="flex flex-wrap items-center gap-2 md:gap-3">
+          {paymentLogos.map((name) => (
+            <div
+              key={name}
+              className="flex h-9 min-w-[68px] items-center justify-center rounded-md border border-yovi-border bg-yovi-bg px-3 text-[11px] font-semibold text-yovi-muted"
+            >
+              {name}
+            </div>
+          ))}
         </div>
       </div>
     </motion.section>
