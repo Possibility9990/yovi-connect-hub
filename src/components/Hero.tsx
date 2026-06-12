@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Users, Lock } from "lucide-react";
+import { ShieldCheck, BadgeCheck, Lock, Check, Star } from "lucide-react";
 import { TrustCard } from "./TrustCard";
 
 export function Hero() {
@@ -59,6 +59,22 @@ export function Hero() {
               </motion.button>
             ))}
           </motion.div>
+
+          {/* Trust chip row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-yovi-muted"
+          >
+            <span className="inline-flex items-center gap-1.5">
+              <Check className="h-3.5 w-3.5 text-yovi-primary" /> Escrow Protected
+            </span>
+            <span className="text-yovi-border">•</span>
+            <span>Secure Payments</span>
+            <span className="text-yovi-border">•</span>
+            <span>Verified Sellers &amp; Providers</span>
+          </motion.div>
         </div>
 
         {/* Right */}
@@ -68,25 +84,37 @@ export function Hero() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="relative"
         >
-          <div className="hero-image-placeholder mx-auto flex aspect-[4/5] w-full max-w-[480px] items-center justify-center rounded-[28px] border border-dashed border-yovi-border bg-white text-sm font-medium text-yovi-muted shadow-sm">
+          {/* Green pill backdrop */}
+          <div className="absolute left-1/2 top-1/2 -z-0 h-[88%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yovi-primary/15" />
+          {/* Dotted pattern */}
+          <div
+            aria-hidden
+            className="absolute -bottom-2 left-6 -z-0 hidden h-16 w-20 sm:block"
+            style={{
+              backgroundImage: "radial-gradient(var(--color-yovi-primary) 1.2px, transparent 1.2px)",
+              backgroundSize: "10px 10px",
+              opacity: 0.35,
+            }}
+          />
+          <div className="hero-image-placeholder relative z-10 mx-auto flex aspect-[4/5] w-full max-w-[460px] items-center justify-center rounded-[28px] border border-dashed border-yovi-border bg-white/60 text-sm font-medium text-yovi-muted shadow-sm backdrop-blur-sm">
             Hero Image Here
           </div>
 
           {/* Floating trust cards */}
           <TrustCard
             title="Verified Sellers"
-            value="13,000+"
+            value="12,450+"
             caption="Active on YOVI"
-            icon={<Users className="h-5 w-5" />}
-            className="absolute -left-4 top-10 hidden w-56 sm:flex"
+            icon={<BadgeCheck className="h-5 w-5" />}
+            className="absolute -left-4 top-6 z-20 hidden w-52 sm:block"
             delay={0.2}
           />
           <TrustCard
             title="Happy Customers"
             value="98%"
             caption="Positive Reviews"
-            icon={<ShieldCheck className="h-5 w-5" />}
-            className="absolute -right-4 top-1/3 hidden w-56 sm:flex"
+            icon={<Star className="h-5 w-5 fill-yovi-orange text-yovi-orange" />}
+            className="absolute -right-4 top-16 z-20 hidden w-52 sm:block"
             delay={0.5}
           />
           <TrustCard
@@ -94,7 +122,7 @@ export function Hero() {
             value="₦2.48+"
             caption="Escrow Protected"
             icon={<Lock className="h-5 w-5" />}
-            className="absolute -left-2 bottom-6 hidden w-56 sm:flex"
+            className="absolute -right-2 bottom-10 z-20 hidden w-52 sm:block"
             delay={0.8}
           />
         </motion.div>
