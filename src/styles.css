@@ -4,6 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-yovi-primary: #10B981;
+  --color-yovi-secondary: #059669;
+  --color-yovi-orange: #F97316;
+  --color-yovi-bg: #F8F8F8;
+  --color-yovi-text: #111827;
+  --color-yovi-muted: #6B7280;
+  --color-yovi-border: #E5E7EB;
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+}
+
 /*
  * Design system definition.
  *
