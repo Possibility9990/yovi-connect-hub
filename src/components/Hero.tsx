@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { BadgeCheck, Lock, Check, Star } from "lucide-react";
+import { BadgeCheck, Lock, Star } from "lucide-react";
 import { TrustCard } from "./TrustCard";
+import heroWoman from "@/assets/hero-woman.png";
 
 export function Hero() {
   return (
@@ -84,26 +85,18 @@ export function Hero() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="relative"
         >
-          {/* Green pill backdrop */}
-          <div className="absolute left-1/2 top-1/2 -z-0 h-[88%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yovi-primary/15" />
-          {/* Dotted pattern */}
-          <div
-            aria-hidden
-            className="absolute -bottom-2 left-6 -z-0 hidden h-16 w-20 sm:block"
-            style={{
-              backgroundImage: "radial-gradient(var(--color-yovi-primary) 1.2px, transparent 1.2px)",
-              backgroundSize: "10px 10px",
-              opacity: 0.35,
-            }}
+          <img
+            src={heroWoman}
+            alt="Smiling customer shopping on YOVI"
+            width={768}
+            height={896}
+            className="relative z-10 mx-auto block w-full max-w-[460px]"
           />
-          <div className="hero-image-placeholder relative z-10 mx-auto flex aspect-[4/5] w-full max-w-[460px] items-center justify-center rounded-[28px] border border-dashed border-yovi-border bg-white/60 text-sm font-medium text-yovi-muted shadow-sm backdrop-blur-sm">
-            Hero Image Here
-          </div>
 
           {/* Floating trust cards */}
           <TrustCard
             title="Verified Sellers"
-            value="12,450+"
+            value="13,000+"
             caption="Active on YOVI"
             icon={<BadgeCheck className="h-5 w-5" />}
             className="absolute -left-4 top-6 z-20 hidden w-52 sm:block"
@@ -114,7 +107,7 @@ export function Hero() {
             value="98%"
             caption="Positive Reviews"
             icon={<Star className="h-5 w-5 fill-yovi-orange text-yovi-orange" />}
-            className="absolute -right-4 top-16 z-20 hidden w-52 sm:block"
+            className="absolute -right-4 top-2 z-20 hidden w-52 sm:block"
             delay={0.5}
           />
           <TrustCard

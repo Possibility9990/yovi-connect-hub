@@ -7,6 +7,12 @@ import {
   Camera,
   Sparkles,
   Car,
+  Home as HomeIcon,
+  ShoppingBag,
+  Wrench as ServicesIcon,
+  ShoppingCart,
+  ClipboardList,
+  Info,
 } from "lucide-react";
 import type { Service } from "@/types/yovi";
 
@@ -22,11 +28,10 @@ export const services: Service[] = [
 ];
 
 export const navigationItems = [
-  { label: "Home", href: "/", active: true, hasDropdown: false },
-  { label: "Products", href: "#products", hasDropdown: true },
-  { label: "Services", href: "#services", hasDropdown: true },
-  { label: "Categories", href: "#categories", hasDropdown: true },
-  { label: "Deals", href: "#deals", hasDropdown: false },
-  { label: "Become a Seller", href: "#seller", hasDropdown: false },
-  { label: "Become a Provider", href: "#provider", hasDropdown: false },
+  { label: "Home", href: "/", active: true, icon: HomeIcon },
+  { label: "Shop", href: "#products", active: false, icon: ShoppingBag },
+  { label: "Services", href: "#services", active: false, icon: ServicesIcon },
+  { label: "Rentals", href: "#rentals", active: false, icon: ShoppingCart },
+  { label: "Requests", href: "#requests", active: false, icon: ClipboardList },
+  { label: "About", href: "#about", active: false, icon: Info },
 ];
