@@ -13,6 +13,7 @@ import { Hero } from "./Hero";
 import { ProductCard } from "./ProductCard";
 import { ServiceCard } from "./ServiceCard";
 import { TrustBanner } from "./TrustBanner";
+import { Footer } from "./Footer";
 import { products } from "@/data/products";
 import { services } from "@/data/services";
 
@@ -121,6 +122,7 @@ export function Home() {
 
         <TrustBanner />
       </main>
+      <Footer />
     </div>
   );
 }
