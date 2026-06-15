@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BadgeCheck, Lock, Star } from "lucide-react";
+import { BadgeCheck, Lock, Star, Check } from "lucide-react";
 import { TrustCard } from "./TrustCard";
 import heroWoman from "@/assets/hero-woman.png";
 
